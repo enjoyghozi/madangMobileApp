@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:madang/home/food_page_body.dart';
 import 'package:madang/utilitys/colors.dart';
 import 'package:madang/widgets/big_text.dart';
 import 'package:madang/widgets/small_text.dart';
@@ -30,9 +31,14 @@ class _MainFoodPageState extends State<MainFoodPage> {
                         text: "Indonesia",
                         color: AppColors.mainColor,
                       ),
-                      SmallText(
-                        text: "Cepu",
-                        color: Colors.black54,
+                      Row(
+                        children: [
+                          SmallText(
+                            text: "Cepu",
+                            color: Colors.black54,
+                          ),
+                          Icon(Icons.arrow_drop_down_rounded)
+                        ],
                       )
                     ],
                   ),
@@ -53,7 +59,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 ],
               ),
             ),
-          )
+          ),
+          FoodPageBody(),
         ],
       ),
     );
