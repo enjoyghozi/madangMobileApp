@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:madang/controller/popular_product_controller.dart';
+import 'package:madang/controller/recommended_product_controller.dart';
 import 'package:madang/data/api/api_client.dart';
 import 'package:madang/data/repository/popular_product_repo.dart';
+import 'package:madang/data/repository/recommended_product_repo.dart';
 import 'package:madang/utilitys/app_constants.dart';
 
 Future<void> init() async {
@@ -10,7 +12,10 @@ Future<void> init() async {
 
   //repository
   Get.lazyPut(() => PopularProductRepo(apiClient: Get.find()));
+  Get.lazyPut(() => RecommendedProductRepo(apiClient: Get.find()));
 
   //controllers
   Get.lazyPut(() => PopularProductController(popularProductRepo: Get.find()));
+  Get.lazyPut(
+      () => RecommendedProductController(recommendedProductRepo: Get.find()));
 }
