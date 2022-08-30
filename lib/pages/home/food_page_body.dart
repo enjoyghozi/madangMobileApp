@@ -7,6 +7,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:madang/controller/popular_product_controller.dart';
 import 'package:madang/models/products_model.dart';
+import 'package:madang/utilitys/app_constants.dart';
 import 'package:madang/utilitys/colors.dart';
 import 'package:madang/utilitys/dimensions.dart';
 import 'package:madang/widgets/app_column.dart';
@@ -230,11 +231,14 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             margin: EdgeInsets.only(
                 left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.radius30),
-                color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("assets/image/food1.jpg"))),
+              borderRadius: BorderRadius.circular(Dimensions.radius30),
+              color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                    AppConstants.BASE_URL + "/upload/" + popularProduct.img!),
+              ),
+            ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
@@ -262,9 +266,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       offset: Offset(5, 0),
                     ),
                   ]),
-              child: AppColumn(
-                text: "Chinese Food",
-              ),
+              child: AppColumn(text: popularProduct.name!),
             ),
           )
         ],

@@ -5,7 +5,7 @@ import 'package:madang/pages/food/popular_food_detail.dart';
 import 'package:madang/pages/food/recomended_food_detail.dart';
 import 'package:madang/pages/home/food_page_body.dart';
 import 'package:madang/pages/home/main_food_page.dart';
-import 'helper/dependiencies.dart' as dep;
+import 'helper/dependencies.dart' as dep;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
