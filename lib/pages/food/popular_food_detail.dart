@@ -127,7 +127,7 @@ class PopularFoodDetail extends StatelessWidget {
                   left: Dimensions.width20,
                   right: Dimensions.width20),
               child: BigText(
-                text: "\Rp20.000 | Add to chart",
+                text: "\Rp20.088 | Add to chart",
                 color: Colors.white,
               ),
               decoration: BoxDecoration(
