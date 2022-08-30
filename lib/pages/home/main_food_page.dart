@@ -38,7 +38,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       Row(
                         children: [
                           SmallText(
-                            text: "Cepu",
+                            text: "Yogyakarta",
                             color: Colors.black54,
                           ),
                           Icon(Icons.arrow_drop_down_rounded)

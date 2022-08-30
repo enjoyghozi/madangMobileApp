@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:madang/controller/popular_product_controller.dart';
 import 'package:madang/pages/food/popular_food_detail.dart';
 import 'package:madang/pages/food/recomended_food_detail.dart';
+import 'package:madang/pages/home/food_page_body.dart';
 import 'package:madang/pages/home/main_food_page.dart';
 import 'helper/dependiencies.dart' as dep;
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: RecomendedFoodDetail(),
+      home: MainFoodPage(),
     );
   }
 }

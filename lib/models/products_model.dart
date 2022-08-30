@@ -23,7 +23,7 @@ class Product {
     if (json['products'] != null) {
       _products = <ProductModel>[];
       json['products'].forEach((v) {
-        _products!.add(new ProductModel.fromJson(v));
+        _products!.add(ProductModel.fromJson(v));
       });
     }
   }
@@ -38,7 +38,7 @@ class ProductModel {
   String? img;
   String? location;
   String? createdAt;
-  String? updateAt;
+  String? updatedAt;
   int? typeId;
 
   ProductModel({
@@ -50,7 +50,7 @@ class ProductModel {
     this.img,
     this.location,
     this.createdAt,
-    this.updateAt,
+    this.updatedAt,
     this.typeId,
   });
 
@@ -63,7 +63,7 @@ class ProductModel {
     img = json['img'];
     location = json['location'];
     createdAt = json['createdAt'];
-    updateAt = json['updateAt'];
+    updatedAt = json['updateAt'];
     typeId = json['typeId'];
   }
 }
