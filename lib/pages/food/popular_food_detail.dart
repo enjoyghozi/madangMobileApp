@@ -5,6 +5,7 @@ import 'package:madang/utilitys/colors.dart';
 import 'package:madang/utilitys/dimensions.dart';
 import 'package:madang/widgets/app_column.dart';
 import 'package:madang/widgets/app_icon.dart';
+import 'package:madang/widgets/expandable_text_widget.dart';
 import 'package:madang/widgets/icon_and_text_widget.dart';
 import 'package:madang/widgets/small_text.dart';
 
@@ -19,6 +20,7 @@ class PopularFoodDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+          //background image
           Positioned(
             left: 0,
             right: 0,
@@ -31,6 +33,7 @@ class PopularFoodDetail extends StatelessWidget {
                       image: AssetImage("assets/image/food1.jpg"))),
             ),
           ),
+          //icon widget
           Positioned(
               top: Dimensions.height45,
               left: Dimensions.width20,
@@ -42,6 +45,7 @@ class PopularFoodDetail extends StatelessWidget {
                   AppIcon(icon: Icons.shopping_cart_outlined),
                 ],
               )),
+          //introduction food
           Positioned(
               left: 0,
               right: 0,
@@ -64,10 +68,19 @@ class PopularFoodDetail extends StatelessWidget {
                   children: [
                     AppColumn(text: "Chinese Food"),
                     SizedBox(height: Dimensions.height20),
-                    BigText(text: "Introduce")
+                    BigText(text: "Introduce"),
+                    SizedBox(height: Dimensions.height20),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: ExpandableTextWidget(
+                            text:
+                                "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy"),
+                      ),
+                    )
                   ],
                 ),
-              ))
+              )),
+          //expandable text widget
         ],
       ),
       bottomNavigationBar: Container(
@@ -109,13 +122,14 @@ class PopularFoodDetail extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.only(
-                top: Dimensions.height30,
-                bottom: Dimensions.height30,
-                left: Dimensions.width20,
-                right: Dimensions.width20,
-              ),
+                  top: Dimensions.height20,
+                  bottom: Dimensions.height20,
+                  left: Dimensions.width20,
+                  right: Dimensions.width20),
               child: BigText(
-                  text: "\Rp20.000 | Add to chart", color: Colors.white),
+                text: "\Rp20.000 | Add to chart",
+                color: Colors.white,
+              ),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: AppColors.mainColor),
